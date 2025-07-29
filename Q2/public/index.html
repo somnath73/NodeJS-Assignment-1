@@ -1,0 +1,49 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Static Web Server</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js"></script>
+
+  <!-- Optional: Custom Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4f46e5',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-8 rounded-xl shadow-lg text-center space-y-4">
+    <h1 class="text-3xl font-bold text-primary">Hello from Static Web Server!</h1>
+    <p class="text-lg">This is served as a static resource.</p>
+    <button 
+      onclick="showAlert()" 
+      class="bg-primary text-white px-6 py-2 rounded hover:bg-indigo-700 transition">
+      Click Me
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<script>
+    function showAlert(){
+        alert('You Clicked the button');
+    }
+</script>

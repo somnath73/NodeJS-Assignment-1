@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  </head>
+  <body class="bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white shadow-2xl rounded-xl p-10 max-w-md text-center space-y-6">
+      <h1 class="text-3xl font-bold text-gray-800">Node.js AJAX Example</h1>
+      
+      <button 
+        onclick="gethello()" 
+        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
+      >
+        <i class="ri-message-2-line mr-2"></i>Get Message
+      </button>
+
+      <p id="message" class="text-lg font-medium text-blue-700"></p>
+    </div>
+
+    <script>
+      function gethello() {
+        fetch("/gethello")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("message").innerText = data;
+          })
+          .catch((err) => {
+            console.error("Error", err);
+          });
+      }
+    </script>
+  </body>
+</html>
